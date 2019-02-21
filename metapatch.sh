@@ -13,8 +13,7 @@ docker tag mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1  mycluster.icp:8
 docker commit xmetapatch mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1
 docker push mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1
 
-kubectl delete pod $(kubectl get pods -n zen | grep xmeta|cut -f1 -d" ") -n zen
-
+kubectl delete pod $(kubectl get pods -n zen | grep iis | cut -f1 -d' ' | tr '\n' ' ') -n zen
 sleep 15
 echo "Current User Expiry------------------------------------------"
 kubectl exec -n zen $(kubectl get pods -n zen | grep xmeta|cut -f1 -d" ") -- chage -l xmeta
