@@ -1,7 +1,7 @@
 #Run in master
 docker rm --force "/xmetapatch" > /dev/null 2>&1
 #docker run -dit --name=xmetapatch  mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1
-docker run -dit --name=xmetapatch --entrypoint "tail" mycluster.icp:8500/zen/is-db2xmeta-image:icp4d-1.2.1.1-rc.2   -f  /dev/null
+docker run -dit --name=xmetapatch --entrypoint "tail" mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1   -f  /dev/null
 docker exec xmetapatch chage -m 0 -M 99999 -I -1 -E -1 xmeta
 docker exec xmetapatch chage -m 0 -M 99999 -I -1 -E -1 db2inst1
 docker exec xmetapatch chage -m 0 -M 99999 -I -1 -E -1 db2fenc1
