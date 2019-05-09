@@ -12,7 +12,8 @@ docker exec xmetapatch chage -m 0 -M 99999 -I -1 -E -1 iauser
 docker exec xmetapatch chage -m 0 -M 99999 -I -1 -E -1 dasusr1
 docker exec xmetapatch touch /patched.000
 docker tag mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1  mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1.org
-docker commit xmetapatch mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1
+#docker commit xmetapatch mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1
+docker commit  --change='ENTRYPOINT  ["/opt/IBM/InformationServer/initScripts/startcontainer.sh"]'  xmetapatch mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1
 docker push mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1
 #kubectl  scale rs  $(kubectl get rs -n zen | grep xmetarepo | cut -f1 -d' ' | tr '\n' ' ') -n zen --replicas=0
 kubectl scale  Deployment/ibm-iisee-zen100-ibm-iisee-zen-iis-xmetarepo -n zen   --replicas=0
