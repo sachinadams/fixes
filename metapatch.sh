@@ -24,8 +24,8 @@ echo "docker rmi mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1 --force"
 #docker rmi mycluster.icp:8500/zen/is-db2xmeta-image:11.7.0.2SP1 --force
 
 #This would be needed in the master
-echo "+++ Once, done run below command from master +++"
+echo "+++ Once done, run below command from master +++"
 echo "kubectl scale  Deployment/ibm-iisee-zen100-ibm-iisee-zen-iis-xmetarepo -n zen   --replicas=1"
 
-echo "After scaling back the deployment, wait for 5 mins and check current User Expiry by running below command----------------------"
+echo "After scaling back the deployment, make sure the xmeta pods is back up and then check current User Expiry by running below command----------------------"
 echo "kubectl exec -n zen $(kubectl get pods -n zen | grep xmeta|cut -f1 -d" ") -- chage -l xmeta"
