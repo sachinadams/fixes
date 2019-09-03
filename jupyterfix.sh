@@ -13,12 +13,12 @@ kubectl scale  deployment -l type=jupyter-py36 --replicas=0
 
 
 # This needs to be done on all the worker nodes. 
-echo "+++ Below command needs to be run manually in all the worker nodes. +++"
+echo "\n+++ Below command needs to be run manually in all the worker nodes. +++ \n "
 echo "docker rmi mycluster.icp:8500/zen/jupyter-d9a36-set1:v1.0.157-x86_64    --force"
 
 #This would be needed in the master
-echo "+++ Once done, run below command from master +++"
+echo "\n+++ Once done, run below command from master +++ \n"
 echo "kubectl scale  deployment -l type=jupyter-py36  --replicas=1"
 
-echo "After scaling back the deployment, make sure the jupyter pods is up and then check if the change is present in the util.py file by running ----------------------"
+echo "\nAfter scaling back the deployment, make sure the jupyter pods is up and then check if the change is present in the util.py file by running ----------------------\n"
 echo "for i in `kubectl get pods -n zen | grep jupyter-py36-server |cut -f1 -d" "`; do kubectl exec -n zen  $i --  tail -1 /opt/conda3/lib/python3.6/site-packages/dsx_ml/util.py ;  done"
