@@ -9,9 +9,9 @@
     "users": [
       {
         "name": "core",
-        "passwordHash": "$6$43y3tkl...",
+        "passwordHash": "$1$iweKqkmC$mNm1FECz5Bsoq5DF9WyWb1",
         "sshAuthorizedKeys": [
-          "key1"
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHFk/cicweEBC1T8cLcmFtYqbn95UPMe0SD7XQP7yLgznC7TiLbgSpK0A4etEhW00IJOenpJIkh3BN/iTE3MX3zyI1ayqHctlalrmiUIxbMqZYTQu9unuyzCSfpnN+FGAD3G5huOy1efTWmxCXIgWxw+XZwipit3klaxmANZ1QESMGqbCcHBcGo8cocDFU91/+odANbyhyDVgg8EIlEkx2C/DqHtZ2KJrV9Fl39WEm613+9RLUD1+Tm7WSl5WTEzNfBgtGwsu7bh3PitAdn6KHSms/yxnAIVQUz708VTAMuG1Rrss969BzYsVmUaIPhsysg9E5rUo2fUBG6Mt/n2kh root@centos7.linuxvmimages.com"
         ]
       }
     ]
